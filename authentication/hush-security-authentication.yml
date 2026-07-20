@@ -1,0 +1,36 @@
+generated: '2026-07-19'
+method: searched
+source: https://docs.hush.security/knowledgebase/api
+notes: >-
+  Auth model confirmed from the first-party HTTPie OAuth plugin
+  (github.com/hushsecurity/httpie-hush) and a live 401 challenge from
+  https://api.us.hush-security.com/v1/users. No public OpenAPI document was found
+  to derive securitySchemes mechanically, so this profile is hand-captured
+  (method: searched).
+docs: https://docs.hush.security/knowledgebase/api
+summary:
+  types: [oauth2]
+  oauth2_flows: [clientCredentials]
+  token_delivery: bearer
+schemes:
+- name: OAuth2ClientCredentials
+  type: oauth2
+  flow: clientCredentials
+  token_url: https://api.us.hush-security.com/v1/oauth/token
+  grant_type: client_credentials
+  client_authentication: http_basic
+  credential_fields:
+    api_key_id: HTTP Basic username
+    api_key_secret: HTTP Basic password
+  token_response:
+    access_token: 'bearer token used as Authorization: Bearer <access_token>'
+    expires_in: token lifetime in seconds (short-lived, re-fetched on expiry)
+  optional_parameters:
+  - name: effective_org
+    location: token request body
+    description: >-
+      Acts on behalf of an effective organization (the HTTPie plugin surfaces
+      this as the EORG environment variable).
+  sources:
+  - https://github.com/hushsecurity/httpie-hush
+  - https://api.us.hush-security.com/v1/users
