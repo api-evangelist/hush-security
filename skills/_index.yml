@@ -1,0 +1,17 @@
+generated: '2026-07-19'
+method: searched
+source: https://github.com/hushsecurity/agent-skills
+notes: >-
+  Hush Security publishes a first-party Claude Code plugin/skill (hush-uam) via
+  their agent-skills marketplace repo. Captured verbatim reference below.
+skills:
+- file: hush-security-uam-manifest.md
+  name: hush-uam-manifest
+  method: searched
+  source: https://github.com/hushsecurity/agent-skills/blob/HEAD/plugins/hush-uam/skills/hush-uam-manifest/SKILL.md
+  plugin: hush-uam
+  plugin_version: 0.4.0
+  marketplace: hushsecurity/agent-skills
+  description: >-
+    Author Kubernetes manifests for Hush UAM — AccessCredential, AccessPrivilege,
+    AccessPolicy CRDs under the am.hush.security/v1alpha1 API group.

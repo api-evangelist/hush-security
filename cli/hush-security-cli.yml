@@ -1,0 +1,22 @@
+generated: '2026-07-19'
+method: searched
+source: https://github.com/hushsecurity/httpie-hush
+notes: >-
+  Hush does not ship a standalone product CLI binary; the first-party
+  command-line surface is delivered as an HTTPie authentication plugin
+  (httpie-hush) that adds Hush OAuth 2 auth to HTTP calls against the API.
+clis:
+- name: httpie-hush
+  kind: httpie-auth-plugin
+  install:
+  - pipx install httpie
+  - pipx inject httpie httpie-hush
+  setup_command: httpie-hush-setup
+  usage: http --auth-type=hush GET https://api.us.hush-security.com/v1/users
+  config_file: ~/.httpie/config.json
+  env_vars:
+  - HTTPIE_HUSH_API_KEY_ID
+  - HTTPIE_HUSH_API_KEY_SECRET
+  - EORG
+  package: pypi:httpie-hush
+  source: https://github.com/hushsecurity/httpie-hush

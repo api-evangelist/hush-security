@@ -1,0 +1,30 @@
+generated: '2026-07-19'
+method: searched
+source: https://docs.hush.security/knowledgebase/api
+notes: >-
+  Cross-cutting standards the Hush Security API conforms to, from live probes and
+  the first-party OAuth plugin. Compliance certifications (SOC 2, ISO 27001) are
+  captured separately in security/hush-security-trust-center.yml.
+standards:
+- id: oauth2
+  conforms: true
+  evidence: >-
+    OAuth 2.0 client-credentials grant at POST /v1/oauth/token (HTTP Basic client
+    auth, Bearer access token) per the httpie-hush plugin.
+- id: oauth2-client-credentials
+  conforms: true
+  evidence: grant_type=client_credentials
+- id: rfc9457-problem-details
+  conforms: true
+  evidence: >-
+    401 response returns application/problem+json with type/title/status/detail/
+    instance from api.us.hush-security.com/v1/users.
+- id: oidc
+  conforms: false
+  evidence: no /.well-known/openid-configuration (404)
+- id: soc2
+  conforms: true
+  evidence: SOC 2 report listed on https://www.hush.security/trust-center/
+- id: iso-27001
+  conforms: true
+  evidence: ISO 27001 report listed on https://www.hush.security/trust-center/

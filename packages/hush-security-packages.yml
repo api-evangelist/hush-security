@@ -1,0 +1,52 @@
+generated: '2026-07-19'
+method: searched
+source: https://github.com/hushsecurity
+notes: >-
+  First-party client tooling and infrastructure packages published by Hush
+  Security. Verified live on their registries.
+packages:
+- language: python
+  registry: pypi
+  name: httpie-hush
+  url: https://pypi.org/project/httpie-hush/
+  install: pipx inject httpie httpie-hush
+  official: true
+  description: >-
+    Hush OAuth 2 plugin for the HTTPie CLI. Exchanges an API Key ID + Secret for a
+    Bearer token against api.<region>.hush-security.com; adds `--auth-type=hush`.
+  source: https://github.com/hushsecurity/httpie-hush
+- language: hcl
+  registry: terraform
+  name: hushsecurity/hush
+  url: https://registry.terraform.io/providers/hushsecurity/hush/latest
+  install: 'terraform { required_providers { hush = { source = "hushsecurity/hush" } } }'
+  official: true
+  version: 1.20.0
+  description: Terraform provider for managing Hush Security resources as code.
+  source: https://github.com/hushsecurity/terraform-provider-hush
+- language: yaml
+  registry: helm
+  name: hush-am
+  url: https://github.com/hushsecurity/helm-charts
+  install: helm repo add hush https://hushsecurity.github.io/helm-charts
+  official: true
+  description: >-
+    Helm charts for the Hush Universal Access Management (UAM) operator and
+    related components.
+  source: https://github.com/hushsecurity/helm-charts
+- language: hcl
+  registry: terraform
+  name: terraform-aws-onboard
+  url: https://github.com/hushsecurity/terraform-aws-onboard
+  install: 'module "hush" { source = "hushsecurity/onboard/aws" }'
+  official: true
+  description: Terraform module to onboard an AWS account to Hush Security.
+  source: https://github.com/hushsecurity/terraform-aws-onboard
+- language: hcl
+  registry: terraform
+  name: terraform-gcp-onboard
+  url: https://github.com/hushsecurity/terraform-gcp-onboard
+  install: 'module "hush" { source = "hushsecurity/onboard/gcp" }'
+  official: true
+  description: Terraform module to onboard a GCP project to Hush Security.
+  source: https://github.com/hushsecurity/terraform-gcp-onboard

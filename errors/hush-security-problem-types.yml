@@ -1,0 +1,23 @@
+generated: '2026-07-19'
+method: searched
+source: https://api.us.hush-security.com/v1/users
+format: rfc9457
+media_type: application/problem+json
+notes: >-
+  The Hush Security API returns RFC 9457 problem-details (application/problem+json
+  with type/title/status/detail/instance). No public OpenAPI document was found to
+  enumerate every 4xx/5xx response, so this catalog records the envelope shape and
+  the problem observed live; it is not an exhaustive registry.
+envelope:
+  fields: [type, title, status, detail, instance]
+problems:
+- status: 401
+  title: Unauthorized
+  type: about:blank
+  detail: 'Unauthorized: authentication required'
+  observed_instance: /v1/users
+  remediation: >-
+    Obtain a Bearer token via POST /v1/oauth/token (HTTP Basic with API Key ID +
+    Secret, grant_type=client_credentials) and send it as
+    `Authorization: Bearer <access_token>`.
+  source: https://api.us.hush-security.com/v1/users

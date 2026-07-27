@@ -1,0 +1,19 @@
+generated: '2026-07-19'
+method: searched
+notes: >-
+  Probed the /.well-known/ discovery surface on the marketing, docs, and API
+  hosts. No documents returned 200; recorded for auditability (absence is valid
+  data). No WellKnown/SecurityTxt pointer is wired because nothing was found.
+hosts:
+- host: https://www.hush.security
+  documents:
+  - {path: /.well-known/security.txt, status: 404}
+- host: https://docs.hush.security
+  documents:
+  - {path: /.well-known/security.txt, status: 416}
+- host: https://api.us.hush-security.com
+  documents:
+  - {path: /.well-known/openid-configuration, status: 404}
+  - {path: /.well-known/oauth-authorization-server, status: 404}
+  - {path: /.well-known/security.txt, status: 404}
+  - {path: /.well-known/api-catalog, status: 404}

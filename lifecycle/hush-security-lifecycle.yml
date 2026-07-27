@@ -1,0 +1,18 @@
+generated: '2026-07-19'
+method: searched
+source: https://docs.hush.security/knowledgebase/api
+notes: >-
+  Versioning is URI-path (v1). No public status page, SLA page, or deprecation
+  policy was found (status.hush.security / status.hush-security.com do not
+  resolve), so no StatusPage or Deprecation pointers are emitted.
+versioning:
+  scheme: uri-path
+  current: v1
+  example: https://api.us.hush-security.com/v1/
+deprecation:
+  policy_url: null
+  sunset_header: unknown
+sla:
+  url: null
+status_page: null
+compliance_ref: security/hush-security-trust-center.yml

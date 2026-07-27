@@ -1,0 +1,46 @@
+generated: '2026-07-19'
+method: searched
+source: https://docs.hush.security/knowledgebase/api
+notes: >-
+  Cross-cutting request/response semantics for the Hush Security API, captured
+  from the first-party HTTPie OAuth plugin, live probes of
+  api.us.hush-security.com, and the documentation. No idempotency-key contract is
+  documented by the provider, so no Idempotency pointer is emitted (no
+  fabrication).
+authentication:
+  style: oauth2-client-credentials
+  token_endpoint: https://api.us.hush-security.com/v1/oauth/token
+  header: 'Authorization: Bearer <access_token>'
+  ref: authentication/hush-security-authentication.yml
+versioning:
+  scheme: uri-path
+  current: v1
+  example: https://api.us.hush-security.com/v1/users
+regions:
+  scheme: region-scoped-host
+  observed:
+  - region: us
+    host: api.us.hush-security.com
+  note: >-
+    The API host is region-scoped (api.<region>.hush-security.com). Only the US
+    host was observed resolving; other regional hosts were not confirmed.
+multi_tenancy:
+  effective_org:
+    parameter: effective_org
+    delivery: token request body (EORG env var in the HTTPie plugin)
+    description: Scope calls to an effective organization.
+error_envelope:
+  format: rfc9457
+  media_type: application/problem+json
+  fields: [type, title, status, detail, instance]
+  observed_example:
+    type: about:blank
+    title: Unauthorized
+    status: 401
+    detail: 'Unauthorized: authentication required'
+    instance: /v1/users
+  ref: errors/hush-security-problem-types.yml
+idempotency:
+  documented: false
+pagination:
+  documented: unknown

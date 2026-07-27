@@ -1,9 +1,31 @@
 aid: hush-security
 name: Hush Security
-description: Hush Security is a company surfaced as a portfolio company of battery-ventures and added
-  to the API Evangelist network as a stub for enrichment. This profile is a lead awaiting the enrichment
-  pipeline.
+description: >-
+  Hush Security delivers identity-first access management for AI agents,
+  workloads, and non-human identities (NHIs), replacing static secrets and
+  long-lived API keys with dynamic, identity-based access at runtime. The
+  platform provides runtime discovery and inventory of non-human identities,
+  secrets detection and remediation, risk and posture management, and
+  identity-based access for workloads and agentic AI through an "identity as
+  code" model. Hush exposes a REST API (api.us.hush-security.com/v1) secured with
+  OAuth 2.0 client-credentials, a Terraform provider, Helm charts, a Kubernetes
+  Universal Access Management (UAM) operator with AccessCredential /
+  AccessPrivilege / AccessPolicy CRDs, and first-party Claude Code agent skills.
+  The company is SOC 2 and ISO 27001 certified.
 url: https://raw.githubusercontent.com/api-evangelist/hush-security/refs/heads/main/apis.yml
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://avatars.githubusercontent.com/u/170552960?v=4
 x-type: company
 x-source: vc-portfolio
 x-backed-by:
@@ -12,12 +34,100 @@ x-tier: stub
 x-tier-reason: portfolio-lead
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-19'
 tags:
 - Company
-apis: []
+- Security
+- Non-Human Identity
+- Identity and Access Management
+- Secrets Management
+- AI Agents
+- Agentic AI
+- Kubernetes
+- Cloud Security
+- Workload Identity
+apis:
+- name: Hush Security API
+  description: >-
+    REST API for the Hush Security platform, secured with OAuth 2.0
+    client-credentials (API Key ID + Secret exchanged at POST /v1/oauth/token for
+    a Bearer access token). Region-scoped host (US). Errors follow RFC 9457
+    problem-details. Example resource surface includes /v1/users.
+  humanURL: https://docs.hush.security/knowledgebase/api
+  baseURL: https://api.us.hush-security.com/v1
+  tags:
+  - Security
+  - Non-Human Identity
+  - Access Management
+  properties:
+  - type: Authentication
+    url: authentication/hush-security-authentication.yml
+  - type: Conventions
+    url: conventions/hush-security-conventions.yml
+  - type: ErrorCatalog
+    url: errors/hush-security-problem-types.yml
+  - type: Lifecycle
+    url: lifecycle/hush-security-lifecycle.yml
+  - type: Conformance
+    url: conformance/hush-security-conformance.yml
+common:
+- type: DomainSecurity
+  url: security/hush-security-domain-security.yml
+- type: Website
+  url: https://www.hush.security/
+- type: DeveloperPortal
+  url: https://docs.hush.security/knowledgebase/
+- type: Documentation
+  url: https://docs.hush.security/knowledgebase/
+- type: APIReference
+  url: https://docs.hush.security/knowledgebase/api
+- type: GettingStarted
+  url: https://docs.hush.security/knowledgebase/getting-started
+- type: Blog
+  url: https://www.hush.security/blog
+- type: Support
+  url: https://www.hush.security/contact/
+- type: GitHubOrganization
+  url: https://github.com/hushsecurity
+- type: SignUp
+  url: https://www.hush.security/free-forever/
+- type: Login
+  url: https://login.hush.security/
+- type: TermsOfService
+  url: https://www.hush.security/terms-of-service/
+- type: PrivacyPolicy
+  url: https://www.hush.security/privacy-policy/
+- type: TrustCenter
+  url: https://www.hush.security/trust-center/
+- type: Compliance
+  url: https://www.hush.security/trust-center/
+- type: Authentication
+  url: authentication/hush-security-authentication.yml
+- type: Conventions
+  url: conventions/hush-security-conventions.yml
+- type: ErrorCatalog
+  url: errors/hush-security-problem-types.yml
+- type: Lifecycle
+  url: lifecycle/hush-security-lifecycle.yml
+- type: Conformance
+  url: conformance/hush-security-conformance.yml
+- type: Packages
+  url: packages/hush-security-packages.yml
+- type: SDKs
+  url: packages/hush-security-packages.yml
+- type: CLI
+  url: cli/hush-security-cli.yml
+- type: AgentSkill
+  url: skills/_index.yml
+- type: LLMsTxt
+  url: llms/hush-security-llms.txt
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+x-enrichment:
+  date: '2026-07-19'
+  status: backfilled
+  pass: local-v1
+  note: backfilled from .gitignore signal + verified work evidence

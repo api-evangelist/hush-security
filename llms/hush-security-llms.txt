@@ -1,0 +1,38 @@
+# Hush Security
+
+> Hush Security delivers identity-first access management for AI agents, workloads, and non-human identities (NHIs), replacing static secrets and long-lived API keys with dynamic, identity-based access at runtime. The platform covers runtime NHI discovery and inventory, secrets detection and remediation, risk and posture management, and identity-based access for workloads and agentic AI ("identity as code"). SOC 2 and ISO 27001 certified.
+
+## API
+
+- [Hush Security API](https://docs.hush.security/knowledgebase/api): REST API at https://api.us.hush-security.com/v1, OAuth 2.0 client-credentials (Bearer), RFC 9457 errors.
+
+## Authentication
+
+- [OAuth 2.0 client-credentials](authentication/hush-security-authentication.yml): API Key ID + Secret exchanged via HTTP Basic at POST /v1/oauth/token for a short-lived Bearer access token; optional effective_org.
+
+## Conventions & Errors
+
+- [API conventions](conventions/hush-security-conventions.yml): URI-path versioning (v1), region-scoped host, effective-org multi-tenancy, RFC 9457 error envelope.
+- [Problem types](errors/hush-security-problem-types.yml): application/problem+json (type/title/status/detail/instance).
+- [Conformance](conformance/hush-security-conformance.yml): OAuth 2.0, client-credentials, RFC 9457, SOC 2, ISO 27001.
+- [Lifecycle](lifecycle/hush-security-lifecycle.yml): URI-path versioning.
+
+## Packages & Tooling
+
+- [Packages / SDKs](packages/hush-security-packages.yml): httpie-hush (PyPI), Terraform provider hushsecurity/hush, Helm charts, AWS/GCP onboarding modules.
+- [CLI](cli/hush-security-cli.yml): httpie-hush HTTPie auth plugin (`http --auth-type=hush`).
+
+## Agent Skills
+
+- [hush-uam-manifest](skills/hush-security-uam-manifest.md): first-party Claude Code skill for authoring AccessCredential / AccessPrivilege / AccessPolicy CRDs under am.hush.security/v1alpha1.
+
+## Docs
+
+- [Developer Portal](https://docs.hush.security/knowledgebase/)
+- [Getting Started](https://docs.hush.security/knowledgebase/getting-started)
+- [API Reference](https://docs.hush.security/knowledgebase/api)
+- [Blog](https://www.hush.security/blog)
+- [Trust Center](https://www.hush.security/trust-center/): SOC 2, ISO 27001, penetration testing.
+- [GitHub](https://github.com/hushsecurity)
+- [Sign Up (Free Forever)](https://www.hush.security/free-forever/)
+- [Login](https://login.hush.security/)
