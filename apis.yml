@@ -45,7 +45,7 @@ x-tier: stub
 x-tier-reason: portfolio-lead
 specificationVersion: '0.23'
 created: '2026-07-17'
-modified: '2026-07-19'
+modified: '2026-10-06'
 tags:
 - Company
 - Security
@@ -92,6 +92,10 @@ apis:
   - type: Conformance
     url: conformance/hush-security-conformance.yml
 common:
+- url: https://www.hush.security/blog/
+  type: Blog
+- url: https://www.hush.security/feed/
+  type: BlogRSS
 - type: DomainSecurity
   url: security/hush-security-domain-security.yml
 - type: Website
