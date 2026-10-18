@@ -79,6 +79,10 @@ apis:
   tags:
   - Security
   - Non-Human Identity
+  - Identity and Access Management
+  tags_raw:
+  - Security
+  - Non-Human Identity
   - Access Management
   properties:
   - type: Authentication
